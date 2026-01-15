@@ -13,4 +13,4 @@ High-accuracy explanations
 
 More astute reasoning and improved formatting
 
-Created for Real Learners who Achieve Real Results And if you're looking for the most robust Sparx-relevant AI out there, it's all about /onxai.
+if you're looking for the most robust Sparx-relevant AI out there, it's all about /onxai.
