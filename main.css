@@ -1,6 +1,9 @@
 body{
     font-family: Arial, sans-serif;
     margin: 20px;
+    background: #000000;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(69, 72, 79, 1) 100%, rgba(71, 76, 99, 1) 50%);
+    color: white;
 }
 #WebsiteHeading{
     text-align: center;
@@ -13,8 +16,8 @@ body{
     border-radius: 5px;
     cursor: pointer;
     font-weight: bolder;
-    background-color: white;
-    color: black;
+    background: none;
+    color: white;
 }
 #LinksSection {
     position: fixed;
