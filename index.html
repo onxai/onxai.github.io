@@ -15,9 +15,26 @@
         }
 
         body {
-            background: #000000;
-            background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(69, 72, 79, 1) 100%, rgba(71, 76, 99, 1) 50%);            color: #fff;
+            background: #000;
+            color: #fff;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* SCROLL GRADIENT OVERLAY */
+        .scroll-gradient {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 1) 0%,
+                rgba(69, 72, 79, 1) 50%,
+                rgb(70, 73, 82) 100%
+            );
+            opacity: 0;
+            pointer-events: none;
+            z-index: -1;
+            transition: opacity 0.1s linear;
         }
 
         /* NAV BAR */
@@ -59,7 +76,8 @@
 
         /* HERO */
         #hero {
-            min-height: 90vh;
+            background-color: rgba(0, 0, 0, 1);
+            transition: background-color 0.1s linear;            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -160,13 +178,11 @@
             padding: 40px;
             border-top: 1px solid #222;
             font-size: 14px;
-            opacity: 1;
         }
 
         footer a {
             color: #fff;
             text-decoration: none;
-            opacity: 1;
         }
 
         footer a:hover {
@@ -206,6 +222,9 @@
 
 <body>
 
+    <!-- GRADIENT OVERLAY -->
+    <div class="scroll-gradient"></div>
+
     <!-- NAV BAR -->
     <nav>
         <h1 onclick="location.href='/'">ONxAI</h1>
@@ -235,8 +254,7 @@
         <h2>What is ONxAI?</h2>
         <p>
             ONxAI is a high-performance Sparx-style assistant engineered for speed,
-            precision, and clarity. Designed to outperform traditional study bots,
-            it delivers consistent, reliable explanations without distraction.
+            precision, and clarity.
         </p>
     </section>
 
@@ -264,6 +282,28 @@
     <footer>
         © 2026 ONxAI · <a href="/credits">Credits</a>
     </footer>
+
+    <!-- SCROLL SCRIPT -->
+    <script>
+        const gradient = document.querySelector(".scroll-gradient");
+        const hero = document.querySelector("#hero");
+
+        window.addEventListener("scroll", () => {
+            const scrollY = window.scrollY;
+            const maxScroll = window.innerHeight * 1.2;
+
+            // progress from 0 → 1
+            let progress = scrollY / maxScroll;
+            progress = Math.min(Math.max(progress, 0), 1);
+
+            // Gradient fades IN
+            gradient.style.opacity = progress;
+
+            // Hero background fades OUT
+            const heroBgOpacity = 1 - progress * 2;
+            hero.style.backgroundColor = `rgba(0, 0, 0, ${heroBgOpacity})`;
+        });
+    </script>
 
 </body>
 </html>
