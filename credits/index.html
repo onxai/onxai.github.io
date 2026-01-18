@@ -1,27 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>OnxAI Credits</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/main.css'>
-    <script src='/main.js'></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONxAI Credits</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+  }
+
+  /* Navbar / Header */
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid #222;
+  }
+
+  nav button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+  }
+
+  nav button:hover {
+    opacity: 0.8;
+  }
+
+  /* Credits Section */
+  .credits {
+    max-width: 700px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    background: #0b0b0b;
+    border: 1px solid #222;
+    border-radius: 18px;
+  }
+
+  .credits h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .credits h3 {
+    color: #aaa;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .credits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .credit-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 12px;
+  }
+
+  .credit-role {
+    color: #aaa;
+    font-weight: 500;
+  }
+
+  .credit-name {
+    font-weight: 600;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #222;
+    color: #777;
+  }
+
+  footer span {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    .credit-item {
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+</style>
 </head>
 <body>
-    <div id="WebsiteHeading"><button onclick="runHomeClick()" id="HeaderBtn" >OnxAI</button></div>
-    <div id="CreditsSection">
-        <h1>Credits</h1>
-        <h3>Our Discord Usernames:</h3>
-        <p>
-            <b>Owner:</b> fadezz.dev<br>
-            <b>AI Lead Developer:</b> fadezz.dev<br>
-            <b>AI Assistant Developer:</b> divythedivy_1<br>
-            <b>Website Lead Developer:</b> not_tealtie<br>
-            <b>Website Assistant Developer:</b> divythedivy_1<br>
-            <b>Senior Staff Member:</b> fadezz.dev<br>
-            <b>Staff Member:</b> divythedivy_1<br>
-            <b>Assistant Staff Member:</b> not_tealtie<br>
-        </p>
+
+<!-- Header -->
+<nav>
+  <button onclick="runHomeClick()">ONxAI</button>
+</nav>
+
+<!-- Credits -->
+<section class="credits">
+  <h1>Credits</h1>
+  <h3>Our Discord Usernames</h3>
+
+  <div class="credits-list">
+    <div class="credit-item">
+      <span class="credit-role">Owner</span>
+      <span class="credit-name">fadezz.dev</span>
+    </div>
+
+    <div class="credit-item">
+      <span class="credit-role">AI Lead Developer</span>
+      <span class="credit-name">fadezz.dev</span>
+    </div>
+
+    <div class="credit-item">
+      <span class="credit-role">AI Assistant Developer</span>
+      <span class="credit-name">divythedivy_1</span>
+    </div>
+
+    <div class="credit-item">
+      <span class="credit-role">Website Lead Developer</span>
+      <span class="credit-name">not_tealtie</span>
+    </div>
+
+    <div class="credit-item">
+      <span class="credit-role">Website Assistant Developer</span>
+      <span class="credit-name">divythedivy_1</span>
+    </div>
+
+    <div class="credit-item">
+      <span class="credit-role">Senior Staff Member</span>
+      <span class="credit-name">fadezz.dev</span>
+    </div>
+
+    <div class="credit-item">
+      <span class="credit-role">Staff Member</span>
+      <span class="credit-name">divythedivy_1</span>
+    </div>
+
+    <div class="credit-item">
+      <span class="credit-role">Assistant Staff Member</span>
+      <span class="credit-name">not_tealtie</span>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2026 <span>ONxAI</span>. All rights reserved.
+</footer>
+
+<script>
+  function runHomeClick() {
+    window.location.href = "/";
+  }
+</script>
+
 </body>
 </html>
