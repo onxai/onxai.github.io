@@ -1,6 +1,6 @@
-console.warn("Sentra AI is dogshit")
-console.log("Don't use Sentra AI")
-console.log("OnxAI is the future")
+console.warn("ONxAI Copyright and Intellectual Property.")
+console.log("System Starting")
+console.log("OnxAI API Running")
 
 function runHomeClick() {
     window.location.href = "/";
