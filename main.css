@@ -1,32 +1,74 @@
-body{
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background: #000000;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(69, 72, 79, 1) 100%, rgba(71, 76, 99, 1) 50%);
-    color: white;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 0%;       /* Black */
+  --foreground: 0 0% 100%;     /* White */
+  
+  --card: 0 0% 5%;             /* Very dark gray */
+  --card-foreground: 0 0% 100%;
+  
+  --popover: 0 0% 5%;
+  --popover-foreground: 0 0% 100%;
+  
+  --primary: 0 0% 100%;        /* White accent */
+  --primary-foreground: 0 0% 0%;
+  
+  --secondary: 0 0% 12%;       /* Dark gray for secondary elements */
+  --secondary-foreground: 0 0% 100%;
+  
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 60%;
+  
+  --accent: 0 0% 15%;
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  --ring: 0 0% 100%;
+  
+  --radius: 0.5rem;
 }
-#WebsiteHeading{
-    text-align: center;
-    margin-bottom: 2px;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-white selection:text-black;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight font-semibold;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
 }
-#HeaderBtn{
-    font-size: 2em; /* Make it larger like a heading */
-    padding: 10px 20px;;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bolder;
-    background: none;
-    color: white;
+
+/* Custom Utilities */
+@layer utilities {
+  .glass {
+    @apply bg-black/40 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-card {
+    @apply bg-zinc-900/50 backdrop-blur-sm border border-white/5 rounded-xl;
+  }
 }
-#LinksSection {
-    bottom: 0;
-    width: 100%;
-    margin-top: 10pt;
-    margin-bottom: 10pt;
-    font-size: 12.5px;
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
 }
-#JoinBtn{
-    background-color:dimgray ;
-    color: white;
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-800 rounded-full hover:bg-zinc-700;
 }
